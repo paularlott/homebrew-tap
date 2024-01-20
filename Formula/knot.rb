@@ -1,4 +1,4 @@
-class knot << Formula
+class knot < Formula
 	desc "A management tool for developer environments running within a Nomad cluster"
 	homepage "https://getknot.dev"
 	version "0.0.1"
