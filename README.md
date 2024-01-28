@@ -5,5 +5,5 @@ Homebrew formula for knot.
 ## Install
 
 ```shell
-brew install paularlott/homebrew/knot
+brew install paularlott/tap/knot
 ```
