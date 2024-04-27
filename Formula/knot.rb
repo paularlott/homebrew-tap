@@ -1,7 +1,7 @@
 class Knot < Formula
 	desc "A management tool for developer environments running within a Nomad cluster"
 	homepage "https://getknot.dev"
-	version "0.6.0"
+	version "0.7.2"
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_darwin_arm64.zip"
