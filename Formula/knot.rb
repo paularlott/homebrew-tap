@@ -1,7 +1,7 @@
 class Knot < Formula
 	desc "A management tool for developer environments running within a Nomad cluster"
 	homepage "https://getknot.dev"
-	version "0.9.3"
+	version "0.9.6"
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_darwin_arm64.zip"
@@ -14,7 +14,7 @@ class Knot < Formula
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_linux_arm64.zip"
-			sha256 "04013cae4c7e0568e4d2fbdbd9c27563ce047b0a842145cabd177e7574c7a9fb"
+			sha256 "dc06a89b7e48e34febcac758f1d19a9be756fb7cc525e914b1737992b7493f93"
 		else
 		 url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_linux_amd64.zip"
 		 sha256 "b8f73952918981e3012d90b8721776f55610fa158eba35e4223106625fb86e8b"
