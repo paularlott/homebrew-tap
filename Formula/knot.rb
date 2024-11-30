@@ -2,22 +2,22 @@ class Knot < Formula
 	desc "A tool for creating and managing developer environments within a Nomad cluster"
 	homepage "https://getknot.dev"
 	license "Apache-2.0"
-	version "0.10.0"
+	version "0.10.1"
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_darwin_arm64.zip"
-			sha256 "3743198a2a54bc08d4bd867e81bdc2bf0436c11fca1d8b941670e64815ebbb53"
+			sha256 "6ffb96855fe14a31f3a581d8bc70f89c77cef78556ffb3444f7c5126a56bf394"
 		else
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_darwin_amd64.zip"
-			sha256 "5f676e6195df6508c332dd80be31ecfa709bca69e6453529a022dbd961d93260"
+			sha256 "bab9a551d0e9e78fcf03498e7ad84ba363da609c49c07afc58c07b70bb920c76"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_linux_arm64.zip"
-			sha256 "fdebe7cebb3bcd21e30cdeeadd37284c84622a7bd88b3e3be7df7be3aad05756"
+			sha256 "6071829a54ee5b02ef95b3e734b06f605ed99fca782a60c52a87c27ee71d4857"
 		else
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_linux_amd64.zip"
-			sha256 "5df2d392823b268b226cd93319584eab8575ca6852b57d371a0286a75b3ea684"
+			sha256 "c6b7d2067176b6965423b426c60bf9555a07337796639ccc67c2f65fbda47ff5"
 		end
 	end
 
