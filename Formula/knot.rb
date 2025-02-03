@@ -6,18 +6,18 @@ class Knot < Formula
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_darwin_arm64.zip"
-			sha256 "3de934602fe0a8f525b8333b58ce9646053b8464f3c5c48d2bb5aeec41d4bb43"
+			sha256 "300c20351a838d08384fd55694ff467267f616aadbba3a629f0998d5c2ea2819"
 		else
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_darwin_amd64.zip"
-			sha256 "fc0fc15f47af6b49adb2bf6fae8f472af6da1687e3a2d05c613f8e00a562069d"
+			sha256 "4688dccb6d446f32b970bb5bf9bb97a38c17bdcdd1e03f538d1129ed45791bb2"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_linux_arm64.zip"
-			sha256 "3def212fe0e3be61554d5f7c17401a3630eb84b8bb45ee1add041dc0d88f7102"
+			sha256 "cfb2aeacd29c30557a5c53139dede19c08a3e785d444aee211f52c2624d91666"
 		else
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_linux_amd64.zip"
-			sha256 "89909c374e814b15b6a74843b0e0565d49c1c63be2dd4a3ed69993cd65dde4ef"
+			sha256 "6343e143a5e400317b410c91bce3df0ee781d67d2321aaf3f83a0dc391ef98a7"
 		end
 	end
 
