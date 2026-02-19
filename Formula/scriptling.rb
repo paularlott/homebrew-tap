@@ -6,18 +6,18 @@ class Scriptling < Formula
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-darwin-arm64.zip"
-			sha256 "481758a6afaaa6d5fe2e7808ba739860dffea815bba2a141c041382d4eeab963"
+			sha256 "16355d0c2aead0db1815fe4b276b64315fbdf3408aaa78a144a68b66ec044f76"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-darwin-amd64.zip"
-			sha256 "4649e19fa6144150d3b0b484031449be8b121e89c6d90d209f8c058ef8b1d0cf"
+			sha256 "ef5a31cd9b67eb685506e4f52e86eb9a7f37915f89fce24e5a6a9bf905431462"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-linux-arm64.zip"
-			sha256 "05fdf7dcfd30e85ffed7cdc610a932ea17dda51d7b43a11cbac048d90ce4595e"
+			sha256 "1f9984c3e56895a94f2c1b866deae9d85d8899deb59caf436d7041ca6a5ba397"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-linux-amd64.zip"
-			sha256 "82d302f37bf09b0ed33f5516a18e3ad33c04207f77ce90b5bbdcffd36e2c45c2"
+			sha256 "0e49d70e573199aed59738aa8c44e47b96173c60a5dbc097ef4c9ca5466e1ccf"
 		end
 	end
 
