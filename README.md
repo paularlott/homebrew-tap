@@ -22,6 +22,17 @@ A tool for creating and managing developer environments within a Nomad cluster.
 brew install paularlott/tap/knot
 ```
 
+### Knot Pro
+
+The commercial version of Knot with additional features including OAuth authentication and enhanced audit logging.
+
+**Install:**
+```shell
+brew install paularlott/tap/knot-pro
+```
+
+> Note: Knot and Knot Pro are mutually exclusive — you cannot have both installed at the same time.
+
 ## Usage
 
 ### Tap the Repository
@@ -37,6 +48,7 @@ Choose the formula you want to install:
 ```shell
 brew install scriptling  # Install Scriptling
 brew install knot        # Install Knot
+brew install knot-pro    # Install Knot Pro
 ```
 
 ### Upgrade Formulas
@@ -46,6 +58,7 @@ To upgrade to the latest version:
 brew update
 brew upgrade scriptling  # Upgrade Scriptling
 brew upgrade knot        # Upgrade Knot
+brew upgrade knot-pro    # Upgrade Knot Pro
 ```
 
 ## Development
@@ -74,6 +87,7 @@ For issues with the formulas themselves (not the projects they install), please 
 For project-specific issues:
 - **Scriptling**: [scriptling GitHub repository](https://github.com/paularlott/scriptling)
 - **Knot**: [knot GitHub repository](https://github.com/paularlott/knot)
+- **Knot Pro**: [knot-pro GitHub repository](https://github.com/paularlott/knot-pro)
 
 ## License
 
