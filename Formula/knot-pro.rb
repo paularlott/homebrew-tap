@@ -2,23 +2,23 @@ class KnotPro < Formula
 	desc "Knot Pro - commercial version of the cloud development environment manager"
 	homepage "https://getknot.dev"
 	license "All rights reserved"
-	version "0.25.1"
+	version "0.25.2"
 	conflicts_with "knot", because: "knot is the open-source version of knot-pro and cannot be installed alongside the pro version"
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/knot-pro/releases/download/v#{version}/knot_darwin_arm64.zip"
-			sha256 "fd9400e331881e9c3d8c721308bcb863a5db097ab8474df9554658f662a9fc08"
+			sha256 "49af51304bf1d4a19e68f97c6e18a9db25ce14660282485220bcabbf9be29181"
 		else
 			url "https://github.com/paularlott/knot-pro/releases/download/v#{version}/knot_darwin_amd64.zip"
-			sha256 "f45b7bbf2c95467c4a52b0e0491f94cc0849d7f89d03815d27a9d91f50d1f807"
+			sha256 "b177293e6a597b4e9ec164cfb1dbf10616f8f80fcd74192619e4079c6dfd2122"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/knot-pro/releases/download/v#{version}/knot_linux_arm64.zip"
-			sha256 "8b6039c00caae4475ff9ed75a311752c3b15fe6d526a4c42ef3de8109cf8f8bb"
+			sha256 "188ac5e6a5f8f6d13557d0dea083c8b7162c598a2c9a2c5e38e471a0f450789d"
 		else
 			url "https://github.com/paularlott/knot-pro/releases/download/v#{version}/knot_linux_amd64.zip"
-			sha256 "2ca51fb3f4d8a08866a930b6e814bac48ed555e79d095c8e42d30c6847fe3f38"
+			sha256 "8d50c374ab4842ef68130aac693076b434040f8af48c2ba34eb0f6677718753e"
 		end
 	end
 
