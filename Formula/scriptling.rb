@@ -2,22 +2,22 @@ class Scriptling < Formula
 	desc "A powerful scripting language with Python-like syntax and Go performance"
 	homepage "https://github.com/paularlott/scriptling"
 	license "MIT"
-	version "0.18.0"
+	version "0.19.0"
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-darwin-arm64.zip"
-			sha256 "b5312b1c87c19b538db354c5c2985375e1d3223903efe9ee5b95c63301ce7c6c"
+			sha256 "bd3477a6c5efb69dc9dc50971f6945ed383fc8e7e362104943264ae7c85b1ba4"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-darwin-amd64.zip"
-			sha256 "428b3a1df07a22aa50ce0b859e8fcf9a5d4c9ac008f24b728550f4058bf1d010"
+			sha256 "324947da8d9fb566dce81d0d712c10b8b89f79aac9276e57f7e7a84fec2c941e"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-linux-arm64.zip"
-			sha256 "d9419e51a00a0d86bf6ebfe449907fd9f04d4d694cafc1dbcb7789ae714fb52a"
+			sha256 "9f4219c3ea411d8e9ec4586e093b4f7c40a6baf6e345288919e3659a09f293cb"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-linux-amd64.zip"
-			sha256 "5bf615af854e26646ff4acc3eacc3a0c51d21e0c08d65ffdbc4651c8d1a17a13"
+			sha256 "43cff1d467dad1cc2f05f6c8c4c29e39c2762ee2e3740efd2f170117d6ba872e"
 		end
 	end
 
