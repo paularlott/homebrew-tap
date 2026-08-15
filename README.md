@@ -11,6 +11,8 @@ A powerful scripting language with Python-like syntax and Go performance.
 **Install:**
 ```shell
 brew install paularlott/tap/scriptling
+
+brew uninstall paularlott/tap/scriptling
 ```
 
 ### Knot
@@ -20,11 +22,15 @@ A tool for creating and managing developer environments within a Nomad cluster.
 **Desktop app (macOS menu bar tray + CLI):**
 ```shell
 brew install --cask paularlott/tap/knot
+
+brew uninstall --cask --zap paularlott/tap/knot
 ```
 
 **CLI only:**
 ```shell
 brew install paularlott/tap/knot
+
+brew uninstall paularlott/tap/knot
 ```
 
 ### Knot Pro
@@ -34,11 +40,15 @@ The commercial version of Knot with additional features including OAuth authenti
 **Desktop app (macOS menu bar tray + CLI):**
 ```shell
 brew install --cask paularlott/tap/knot-pro
+
+brew uninstall --cask --zap paularlott/tap/knot-pro
 ```
 
 **CLI only:**
 ```shell
 brew install paularlott/tap/knot-pro
+
+brew uninstall paularlott/tap/knot-pro
 ```
 
 > Note: Knot and Knot Pro are mutually exclusive — you cannot have both installed at the same time.
@@ -50,11 +60,15 @@ A tool for loadbalancing and chatting with LLMs and MCP servers.
 **Desktop app (macOS menu bar tray + CLI):**
 ```shell
 brew install --cask paularlott/tap/llmrouter
+
+brew uninstall --cask --zap paularlott/tap/llmrouter
 ```
 
 **CLI only:**
 ```shell
 brew install paularlott/tap/llmrouter
+
+brew uninstall paularlott/tap/llmrouter
 ```
 
 ## Development
