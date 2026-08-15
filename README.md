@@ -17,7 +17,12 @@ brew install paularlott/tap/scriptling
 
 A tool for creating and managing developer environments within a Nomad cluster.
 
-**Install:**
+**Desktop app (macOS menu bar tray + CLI):**
+```shell
+brew install --cask paularlott/tap/knot
+```
+
+**CLI only:**
 ```shell
 brew install paularlott/tap/knot
 ```
@@ -26,39 +31,30 @@ brew install paularlott/tap/knot
 
 The commercial version of Knot with additional features including OAuth authentication and enhanced audit logging.
 
-**Install:**
+**Desktop app (macOS menu bar tray + CLI):**
+```shell
+brew install --cask paularlott/tap/knot-pro
+```
+
+**CLI only:**
 ```shell
 brew install paularlott/tap/knot-pro
 ```
 
 > Note: Knot and Knot Pro are mutually exclusive — you cannot have both installed at the same time.
 
-## Usage
+### LLM Router
 
-### Tap the Repository
+A tool for loadbalancing and chatting with LLMs and MCP servers.
 
-First, tap this repository:
+**Desktop app (macOS menu bar tray + CLI):**
 ```shell
-brew tap paularlott/tap
+brew install --cask paularlott/tap/llmrouter
 ```
 
-### Install a Formula
-
-Choose the formula you want to install:
+**CLI only:**
 ```shell
-brew install scriptling  # Install Scriptling
-brew install knot        # Install Knot
-brew install knot-pro    # Install Knot Pro
-```
-
-### Upgrade Formulas
-
-To upgrade to the latest version:
-```shell
-brew update
-brew upgrade scriptling  # Upgrade Scriptling
-brew upgrade knot        # Upgrade Knot
-brew upgrade knot-pro    # Upgrade Knot Pro
+brew install paularlott/tap/llmrouter
 ```
 
 ## Development
@@ -88,6 +84,7 @@ For project-specific issues:
 - **Scriptling**: [scriptling GitHub repository](https://github.com/paularlott/scriptling)
 - **Knot**: [knot GitHub repository](https://github.com/paularlott/knot)
 - **Knot Pro**: [knot-pro GitHub repository](https://github.com/paularlott/knot-pro)
+- **LLM Router**: [llmrouter GitHub repository](https://github.com/paularlott/llmrouter)
 
 ## License
 
