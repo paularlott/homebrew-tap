@@ -7,23 +7,23 @@ class ScriptlingFull < Formula
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-full-darwin-arm64.zip"
-			sha256 "453ab465e0923c50b6b8cc0513276a1e49a8caba09a23b405ecb891a3de8ca04"
+			sha256 "635b9de16ad0cede0a2e3ce5126ed1c9e32ac50cc2c16ed7592732901ea53811"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-full-darwin-amd64.zip"
-			sha256 "f8c84cd447e98bec3754cee80831d27da832a91629988c8572091625a3f133d7"
+			sha256 "41a7ff3ff1b088420b02e9eaa0bf4610b4aef6bfec25d3e690e7eea271cef981"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-full-linux-arm64.zip"
-			sha256 "055ab526a00742b862ab4b6dc5c18f08280db4e593ba52050380f1cc6ab9c50d"
+			sha256 "0827881f575596a2ef02cb9244ece661eb35ca5d1d2fc9390ffbdfa8f1f376dd"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-full-linux-amd64.zip"
-			sha256 "fd48bbdeafa7e0a92d5ae239dc590853c80925162e21f173b73cb5b0668fc824"
+			sha256 "a7b7c1d0de41d9328b0ed4ff4b3a698b2322298fbdfa89e8194409854b292e0c"
 		end
 	end
 
 	def install
-		bin.install "scriptling-full" => "scriptling"
+		bin.install "scriptling"
 	end
 
 	def caveats

@@ -6,18 +6,18 @@ class ScriptlingPlugins < Formula
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/plugins-darwin-arm64.zip"
-			sha256 "1928ef7b10c09b34ba479bf700c05ac3b2a49680df541cd0720a6c43c06c4589"
+			sha256 "8830c4df74386ba763bda8912f99928a20dc4e2ff749914b968a0257a396a21b"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/plugins-darwin-amd64.zip"
-			sha256 "6f1d05478d279474f6aa8153e25bf2e78e58bc088a696efd89b6763487fbbec2"
+			sha256 "dcb88deb0d80389b7050c6ec849d02c4e012f657bb353cb59b4acdac99a3e9d4"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/plugins-linux-arm64.zip"
-			sha256 "a8fe3466ebe446db093e7f4725c089b6aa369d4fc2150a96d24289649ecbed00"
+			sha256 "6d9f30652b49d909b0072858cdd3499e58994d2c94a9f50d49f9d1f63d3c37f5"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/plugins-linux-amd64.zip"
-			sha256 "140ea826192a921d87911e3fab89e4bfb7a001bac1ce9bf0813c35fe544b428f"
+			sha256 "4a43c57a2a89955f742085f0199625b6d782842744ce4b02f95f0edf63205cbb"
 		end
 	end
 
