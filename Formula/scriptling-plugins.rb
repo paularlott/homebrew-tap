@@ -2,22 +2,22 @@ class ScriptlingPlugins < Formula
 	desc "Database plugins for Scriptling (sqlite, sql, valkey, badger)"
 	homepage "https://github.com/paularlott/scriptling"
 	license "MIT"
-	version "0.23.1"
+	version "0.24.0"
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/plugins-darwin-arm64.zip"
-			sha256 "1603ea110d67c88dd2f093a22f53b159a0aeb3649384b5a3363bb305bf8832f3"
+			sha256 "4c00891721bab13c414eba31bec19ed37ed58ac74d2383fef04431d2ea5044c1"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/plugins-darwin-amd64.zip"
-			sha256 "58d14a48c413df685c06a578f95ff83f66c14a109ff8a4ad95c797d76df9be90"
+			sha256 "8c4d3cb45f783f07f301a390c0bc1d6c83c0e19c12bd1a5e48ec0cc9e705717f"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/plugins-linux-arm64.zip"
-			sha256 "8e9254b64476901556c4ad9f8e2839f1f332494c23562cb222a1631dd26e07c0"
+			sha256 "7d4a0916e535de4976c01d9c3d41f4ef044b11027e5b4ec6a3ea5ac2abb7aff3"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/plugins-linux-amd64.zip"
-			sha256 "2e08bb84cc39c2a01e425a58c3588b04f126ee6e9c73e2f6129dbc4d7c5b1d8d"
+			sha256 "503509a6d9b9d936f2a41b8a14283f30835005888865688e5b846113b2d39597"
 		end
 	end
 
@@ -37,7 +37,7 @@ class ScriptlingPlugins < Formula
 			or pass to each run:
 			  scriptling --plugin-dir #{opt_libexec}/plugins script.py
 
-			scriptling-full users do not need this formula — the plugins are
+			scriptling users do not need this formula — the plugins are
 			compiled in.
 		EOS
 	end

@@ -1,24 +1,24 @@
 class Scriptling < Formula
-	desc "A powerful scripting language with Python-like syntax and Go performance"
+	desc "A powerful scripting language with Python-like syntax and database plugins built in"
 	homepage "https://github.com/paularlott/scriptling"
 	license "MIT"
-	version "0.23.1"
-	conflicts_with "scriptling-full", because: "both install a scriptling binary"
+	version "0.24.0"
+	conflicts_with "scriptling-slim", because: "both install a scriptling binary"
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-darwin-arm64.zip"
-			sha256 "8a82aea07eb10cb9427d6545584039655fd5c581b0320e40a4ae7249602cb554"
+			sha256 "cc1bdce31c27cbe4e5b48e43eeeaab230f5022fb74ad9e6fd07751499cda5517"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-darwin-amd64.zip"
-			sha256 "04caeef73006bec2a7d3e1ce2ff12bae2a4d84d1fcccd12fa0f927c501cfd7f3"
+			sha256 "ff3c300916418776d72d9bf7f09f9cdf243dea62b6d7755042ce1f89ce80dc3e"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-linux-arm64.zip"
-			sha256 "0c8ed10d3b9ef2d699f8cdb4310587503ec43166264d7b93cca92032973e5bfe"
+			sha256 "167a8b7bb11d1d5652ea62bb53e66265dab0b6dffeee464c96acefd073fcbd1c"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-linux-amd64.zip"
-			sha256 "fe3296ab4549aaa819f4d89dff4589f8557bb8695b273dbc7772b15003e5c3c8"
+			sha256 "27cdea69df9726c86b3cb768011dbf3b753f3e8c97f4b1965f99d5d62ad3e729"
 		end
 	end
 
@@ -28,10 +28,9 @@ class Scriptling < Formula
 
 	def caveats
 		<<~EOS
-For the database plugins: brew install scriptling-full (this binary plus
-sqlite/sql/valkey/badger compiled in), or keep this lean build and
-brew install scriptling-plugins, then run with
-SCRIPTLING_PLUGIN_DIR="$(brew --prefix)/opt/scriptling-plugins/libexec/plugins".
+The sqlite, sql, valkey and badger database plugins are compiled in,
+so the scriptling-plugins formula is not needed. For a leaner
+binary without them: brew install scriptling-slim.
 
 		EOS
 	end
