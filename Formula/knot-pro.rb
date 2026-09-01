@@ -2,27 +2,54 @@ class KnotPro < Formula
 	desc "Knot Pro - commercial version of the cloud development environment manager"
 	homepage "https://getknot.dev"
 	license "All rights reserved"
-	version "0.32.1"
-	conflicts_with "knot", because: "knot is the open-source version of knot-pro and cannot be installed alongside the pro version"
-	if OS.mac?
-		if Hardware::CPU.arm?
+	version "0.33.0"
+  conflicts_with "knot", because: "knot is the open-source version of knot-pro and cannot be installed alongside the pro version"
+	on_macos do
+		on_arm do
 			url "https://github.com/paularlott/knot-pro/releases/download/v#{version}/knot_darwin_arm64.zip"
-			sha256 "8afca94c5dd986ce9de50a8c0f2438138a199ba42591464fa091578837afcdd2"
-		else
-			url "https://github.com/paularlott/knot-pro/releases/download/v#{version}/knot_darwin_amd64.zip"
-			sha256 "fd9f8ec1b5aa1e7195efefc9dadf481ee4ad96931647e91c0538f10fe3027f23"
+			sha256 "d3e1ea875dbaacfdd16cb478ac3e49fc45a759e846926a72f65db09ad662ecf8"
 		end
-	elsif OS.linux?
-		if Hardware::CPU.arm?
+		on_intel do
+			url "https://github.com/paularlott/knot-pro/releases/download/v#{version}/knot_darwin_amd64.zip"
+			sha256 "b3a54d65b4095c5bd0169581402bbf25f8a686d97b34ecc260554a0fa803f370"
+		end
+	end
+
+	on_linux do
+		on_arm do
 			url "https://github.com/paularlott/knot-pro/releases/download/v#{version}/knot_linux_arm64.zip"
-			sha256 "4d77f23290e9c1c1d7ce524417ca40385d67f1420726c77af7a8830115d0fcdb"
-		else
+			sha256 "46365cf35e202ccc61be3943931b5df328d7532e1430fc3937451dee5f157e99"
+		end
+		on_intel do
 			url "https://github.com/paularlott/knot-pro/releases/download/v#{version}/knot_linux_amd64.zip"
-			sha256 "d7f566ba9ad59348702aea0a145b22d08e9c74261c0ccb1297b2baf664a57568"
+			sha256 "b90d296d10dc03ac9403f7ee8da45a448ea2d214cb87bfed24b85d0258e5cf0c"
 		end
 	end
 
 	def install
-		bin.install "knot"
+		if OS.mac?
+			# The cask also links the knot CLI into bin; refuse to fight over
+			# the symlink. Homebrew has no formula<->cask conflicts_with DSL.
+			if (HOMEBREW_PREFIX/"Caskroom/knot-pro").directory?
+				odie "knot cask is installed, which also provides the knot CLI. Uninstall it first:\n  brew uninstall --cask paularlott/tap/knot-pro"
+			end
+
+			# macOS zip contains Knot.app — install under libexec, symlink the CLI.
+			# Homebrew stages single-root archives from inside the root, so the
+			# working directory is Knot.app itself and "Contents" is at its root.
+			(libexec/"Knot.app").install "Contents"
+			bin.install_symlink libexec/"Knot.app/Contents/MacOS/knot"
+		else
+			bin.install "knot"
+		end
+	end
+
+	def caveats
+		on_macos do
+			<<~EOS
+				For the desktop app with menu bar tray, install the cask instead:
+				  brew install --cask paularlott/tap/knot-pro
+			EOS
+		end
 	end
 end
