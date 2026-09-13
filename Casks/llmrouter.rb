@@ -1,12 +1,12 @@
 cask "llmrouter" do
-	version "0.9.2"
+	version "0.9.3"
 
 	on_arm do
-		sha256 "e7c1924c7a79c04f8d86070c069f0b296b0a21fdb76681f922b090c35b8da41d"
+		sha256 "fb788bc034c7df596a6324f065d94d76682274282a161c0375f54477b4c893f6"
 		url "https://github.com/paularlott/llmrouter/releases/download/v#{version}/llmrouter-darwin-arm64.zip"
 	end
 	on_intel do
-		sha256 "ae6b0a693977cb7e583657d5eb22ab9db0e86fba7c44a029151167e7f5d4d22e"
+		sha256 "7e19afedd1f52503c5d43d690ba1c79c06568d8cf7f5b4292c1f1579a756d1c0"
 		url "https://github.com/paularlott/llmrouter/releases/download/v#{version}/llmrouter-darwin-amd64.zip"
 	end
 
@@ -18,23 +18,27 @@ cask "llmrouter" do
 
 	# Also make the binary available on PATH so the llmrouter command works
 	# from the terminal without separately installing the formula.
-	postflight do
+	postflight_steps do
 		# The formula also links the llmrouter CLI; refuse to fight over the symlink.
-		if File.directory?("#{HOMEBREW_PREFIX}/Cellar/llmrouter")
-			raise "llmrouter formula is installed, which also provides the llmrouter CLI. Uninstall it first:\n  brew uninstall llmrouter"
+		# A failing run step aborts the install and prints the message on stderr.
+		if_path_exists "{{HOMEBREW_PREFIX}}/Cellar/llmrouter" do
+			run "/bin/sh", args: ["-c",
+				"printf '%s\\n' " \
+				"'llmrouter formula is installed, which also provides the llmrouter CLI. Uninstall it first:' " \
+				"'  brew uninstall llmrouter' >&2; exit 1"]
 		end
 
 		# The app is ad-hoc signed (not notarized) and brew quarantines cask
 		# downloads, which makes Gatekeeper kill the binary on first exec.
 		# Strip the flag so the app and the CLI link work immediately.
-		# Non-bang system_command: xattr -d fails if the attribute is absent.
-		system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "/Applications/LLM Router.app"]
+		# must_succeed: false as xattr -d fails if the attribute is absent.
+		run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/LLM Router.app"], must_succeed: false
 
-		FileUtils.ln_sf("/Applications/LLM Router.app/Contents/MacOS/llmrouter", "#{HOMEBREW_PREFIX}/bin/llmrouter")
-	end
-
-	uninstall_postflight do
-		FileUtils.rm_f "#{HOMEBREW_PREFIX}/bin/llmrouter"
+		# overwrite: true replaces any existing link (was FileUtils.ln_sf);
+		# remove_on_uninstall unlinks the CLI on uninstall, replacing the old
+		# uninstall_postflight hook.
+		symlink "{{appdir}}/LLM Router.app/Contents/MacOS/llmrouter", "{{HOMEBREW_PREFIX}}/bin/llmrouter",
+			overwrite: true, remove_on_uninstall: true
 	end
 
 	zap trash: [
