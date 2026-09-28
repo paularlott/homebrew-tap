@@ -1,12 +1,12 @@
 cask "llmrouter" do
-	version "0.10.1"
+	version "0.11.0"
 
 	on_arm do
-		sha256 "4eada35f04bdf738914c924a0fd95993e7feda0ca1092fa9c3af2be1431edeac"
+		sha256 "7d5595c4e365e2bd63ca6f088218a1e3d3b6f70ac183ff0972c352f18880ad27"
 		url "https://github.com/paularlott/llmrouter/releases/download/v#{version}/llmrouter-darwin-arm64.zip"
 	end
 	on_intel do
-		sha256 "ffa0cbd26705f3c3c0d75634d5319cefa86ce25f5ef7ea570ad1808fb023c7ba"
+		sha256 "d70d006f440e4d40cef77ef2d26f9cc40d76a0a98115d85ce49b2607459dd1ab"
 		url "https://github.com/paularlott/llmrouter/releases/download/v#{version}/llmrouter-darwin-amd64.zip"
 	end
 
