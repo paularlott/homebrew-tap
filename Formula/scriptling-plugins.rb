@@ -2,22 +2,22 @@ class ScriptlingPlugins < Formula
 	desc "Database plugins for Scriptling (sqlite, sql, valkey, badger)"
 	homepage "https://github.com/paularlott/scriptling"
 	license "MIT"
-	version "0.30.1"
+	version "0.30.2"
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/plugins-darwin-arm64.zip"
-			sha256 "a21581df906861edb8fc6c47e2d59599c3e8e88b6032bf4aa826b7ae66837c8a"
+			sha256 "83aaa580a7a665c6e5f8e6a368fc79a0b82fa56cb8a6de376ffd029baa6c0f69"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/plugins-darwin-amd64.zip"
-			sha256 "3023c86e9308adda631dfcb022a456d8e95e00fa6628e66b81a99b951950297c"
+			sha256 "b00f070cfb8ae57629c6ac9fa5b83bcc95d49b8c87183e21b4c0137f150ec257"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/plugins-linux-arm64.zip"
-			sha256 "08037a2de92b634cc7105c1e3493f9a9a5bb8486e21263bcdd28742eb49c25fa"
+			sha256 "3b67bd55ca45c7496ab9aaf119ea13739e0e5ccfbf4655c7eb49682b31793896"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/plugins-linux-amd64.zip"
-			sha256 "8199f254be6f92638515eaaf2311b36683118723d302f30aff23c5db8354d63b"
+			sha256 "670f21584819a0cf5916422a70122d04a5152ba86542279e96b0865d2a94e047"
 		end
 	end
 
