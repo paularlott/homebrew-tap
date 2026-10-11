@@ -7,22 +7,22 @@ class Knot < Formula
 	on_macos do
 		on_arm do
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_darwin_arm64.zip"
-			sha256 "138d9d0c924eb38c0bcc2352c55d73965ac6dfa4c5e054d15c526d5f6bf798e9"
+			sha256 "c4aaa94d0a1a8b0641bc3d58edf348daf62dd7adfe19d7f14b9def0d8327619d"
 		end
 		on_intel do
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_darwin_amd64.zip"
-			sha256 "e2ac46322fee303da8abde3ec8c467a3efc213703a507126a2a1ecef543fb1ad"
+			sha256 "1a7e6bb1b20544a09b51b9d07524d0dc3db6b13c172ed27a50b0c1413b2f5269"
 		end
 	end
 
 	on_linux do
 		on_arm do
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_linux_arm64.zip"
-			sha256 "9eaebf73fceff4346b4350ca1ebd087e1ce23b519e366fa08e74966c7f7ccc47"
+			sha256 "d32e9100e0d8cad6fc721a1bb6833bd1c341fce65abeda268712bc46f125feaf"
 		end
 		on_intel do
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_linux_amd64.zip"
-			sha256 "5c8d558f68712ebd2fd47e303cbfb67e63fc4a7264bf2691cd31e2dde0b3a10b"
+			sha256 "0dbd4a3d6fb46a6e27bceb1e349b676ab75912680b4f194abc086d44bfaad5a3"
 		end
 	end
 
