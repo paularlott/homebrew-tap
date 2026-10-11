@@ -1,12 +1,12 @@
 cask "knot" do
-	version "0.36.2"
+	version "0.37.0"
 
 	on_arm do
-		sha256 "8dcf476b447d7a6850db085dedf7aea3e9142b504d76b6a3d348a8d0e94b9189"
+		sha256 "138d9d0c924eb38c0bcc2352c55d73965ac6dfa4c5e054d15c526d5f6bf798e9"
 		url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_darwin_arm64.zip"
 	end
 	on_intel do
-		sha256 "4727a6af76e2cacb0311fc2a3e7966605fea613786441f4d6cd91c531aa2446d"
+		sha256 "e2ac46322fee303da8abde3ec8c467a3efc213703a507126a2a1ecef543fb1ad"
 		url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_darwin_amd64.zip"
 	end
 
