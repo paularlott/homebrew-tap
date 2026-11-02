@@ -2,27 +2,27 @@ class Knot < Formula
 	desc "A tool for creating and managing developer environments within a Nomad cluster"
 	homepage "https://getknot.dev"
 	license "Apache-2.0"
-	version "0.40.0"
+	version "0.41.0"
   conflicts_with "knot-pro", because: "knot-pro is a commercial version of knot and cannot be installed alongside the open-source version"
 	on_macos do
 		on_arm do
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_darwin_arm64.zip"
-			sha256 "22d6baea0ab19a30503043a89b6d8ca7c54204bfda51a30383d849a8df118d52"
+			sha256 "fb85b0a80efbbb86439d9b2053613b24f9dc1ae53fde5d18bfe7f5713e98f3d0"
 		end
 		on_intel do
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_darwin_amd64.zip"
-			sha256 "bd231d8b785a6e0d350da7e9fb2dc4f47e8bb17b1d7a529e84c47421eb33a579"
+			sha256 "de3cb39ab3fbca6f620df73a0fc9afa81b857cec67df6fa30a015786dc087bb1"
 		end
 	end
 
 	on_linux do
 		on_arm do
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_linux_arm64.zip"
-			sha256 "59799140a0fceb410ada9deabb5bc6c2b0625fbca3bcc704d482c59b03842ed2"
+			sha256 "5b70b6483a3598ec2cebcd34cd0108a2f17e6359d2c0c94420a19f26e84c5c52"
 		end
 		on_intel do
 			url "https://github.com/paularlott/knot/releases/download/v#{version}/knot_linux_amd64.zip"
-			sha256 "59d858f28fa48bdf4aa543f5fc84a524c282a1db0c0be07df0cf00d688a41356"
+			sha256 "24b392011e1daef3ec478d1b661a696306862828d67dfda471143b402b39f28b"
 		end
 	end
 
