@@ -100,6 +100,10 @@ For project-specific issues:
 - **Knot Pro**: [knot-pro GitHub repository](https://github.com/paularlott/knot-pro)
 - **LLM Router**: [llmrouter GitHub repository](https://github.com/paularlott/llmrouter)
 
+## Contributing
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute and how to sign the Contributor License Agreement.
+
 ## License
 
 This Homebrew tap is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
