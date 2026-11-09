@@ -2,25 +2,25 @@ class ScriptlingSlim < Formula
 	desc "Scriptling without the database plugins compiled in (use scriptling-plugins)"
 	homepage "https://github.com/paularlott/scriptling"
 	license "MIT"
-	version "0.36.0"
+	version "0.36.1"
 	conflicts_with "scriptling", because: "both install a scriptling binary"
 	conflicts_with "scriptling-onepassword", because: "both install a scriptling binary"
 	conflicts_with "scriptling-slim-onepassword", because: "both install a scriptling binary"
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-slim-darwin-arm64.zip"
-			sha256 "1351033b34258cbd34b69059aa9dc2684340e055eee6a9edd01c043f46e1bcfc"
+			sha256 "15b5a93f9a0a58452e4b280761b826a6ab52a4842a6935d676935edfc333dc4c"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-slim-darwin-amd64.zip"
-			sha256 "fb2b5fd1ce3f26e55883c62160e43f0ff2abe280035ba3e2b1fe36a99786bf06"
+			sha256 "7993ecd332e995b7341d104095b1a6dcb9c4c9f52f93ac22b6cc7f7ba3c37446"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-slim-linux-arm64.zip"
-			sha256 "3d47804bfa0329952bf056ae6a48abd8dcd2b7fbd0930ba57c0a7a7e8e2abd3d"
+			sha256 "2cebdc10dd77ddf6b66e290d028d68062a36c3c26bfba19ca8a6c94e9d4899f1"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-slim-linux-amd64.zip"
-			sha256 "f423a144f1cfc5559b4540ffc19f7af9119e32391443d46c8c9f7423f2e64ea5"
+			sha256 "c80679b29175847bed3d0090df4cfc90b8a09e24a7540dc19956e9ac7b986dcb"
 		end
 	end
 
