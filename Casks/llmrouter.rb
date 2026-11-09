@@ -1,12 +1,12 @@
 cask "llmrouter" do
-	version "0.16.1"
+	version "0.16.2"
 
 	on_arm do
-		sha256 "b0819f76e19d3e00e1dd0bc1af569a94bc5b3acb14e2086dc33e6eecf285915d"
+		sha256 "b6d0e1d5ffc2070d7437fcbb7f70a84d64ac7d48c3d26e9eeda716e6634b91e0"
 		url "https://github.com/paularlott/llmrouter/releases/download/v#{version}/llmrouter-darwin-arm64.zip"
 	end
 	on_intel do
-		sha256 "6e7678f507c129dbd0a05bb58d2437073885c68fdea0d84448950bc4232f10a9"
+		sha256 "9eaa83d5086b51957a0e9df275a70feed1ab26b35d9f93743fae2577204bf3d4"
 		url "https://github.com/paularlott/llmrouter/releases/download/v#{version}/llmrouter-darwin-amd64.zip"
 	end
 
@@ -27,12 +27,6 @@ cask "llmrouter" do
 				"'llmrouter formula is installed, which also provides the llmrouter CLI. Uninstall it first:' " \
 				"'  brew uninstall llmrouter' >&2; exit 1"]
 		end
-
-		# The app is ad-hoc signed (not notarized) and brew quarantines cask
-		# downloads, which makes Gatekeeper kill the binary on first exec.
-		# Strip the flag so the app and the CLI link work immediately.
-		# must_succeed: false as xattr -d fails if the attribute is absent.
-		run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/LLM Router.app"], must_succeed: false
 
 		# overwrite: true replaces any existing link (was FileUtils.ln_sf);
 		# remove_on_uninstall unlinks the CLI on uninstall, replacing the old
