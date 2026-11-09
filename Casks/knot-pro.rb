@@ -1,12 +1,12 @@
 cask "knot-pro" do
-	version "0.41.1"
+	version "0.42.0"
 
 	on_arm do
-		sha256 "4622710217b6c7fee9089b6df7457206b6cccb2086af3256552f7c99b5f27def"
+		sha256 "be4aadc0225b6158ec59eaba5a39b185cb9b0e858ef86b6ef9fe83e8b19a62d4"
 		url "https://github.com/paularlott/knot-pro/releases/download/v#{version}/knot_darwin_arm64.zip"
 	end
 	on_intel do
-		sha256 "0d87229c72181bf7081af72ae3bc06f60806209a810f8122eee51a0206ca4ee5"
+		sha256 "b73513515f7b4d3b0f5509a30f486c43ae3cd8b9b8ce8c4e0629ccdadaaa629a"
 		url "https://github.com/paularlott/knot-pro/releases/download/v#{version}/knot_darwin_amd64.zip"
 	end
 
@@ -27,12 +27,6 @@ cask "knot-pro" do
 				"'knot formula is installed, which also provides the knot CLI. Uninstall it first:' " \
 				"'  brew uninstall knot-pro' >&2; exit 1"]
 		end
-
-		# The app is ad-hoc signed (not notarized) and brew quarantines cask
-		# downloads, which makes Gatekeeper kill the binary on first exec.
-		# Strip the flag so the app and the CLI link work immediately.
-		# must_succeed: false as xattr -d fails if the attribute is absent.
-		run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Knot.app"], must_succeed: false
 
 		# overwrite: true replaces any existing link (was FileUtils.ln_sf);
 		# remove_on_uninstall unlinks the CLI on uninstall, replacing the old
