@@ -2,25 +2,25 @@ class Scriptling < Formula
 	desc "A powerful scripting language with Python-like syntax and database plugins built in"
 	homepage "https://github.com/paularlott/scriptling"
 	license "MIT"
-	version "0.37.0"
+	version "0.38.0"
 	conflicts_with "scriptling-slim", because: "both install a scriptling binary"
 	conflicts_with "scriptling-onepassword", because: "both install a scriptling binary"
 	conflicts_with "scriptling-slim-onepassword", because: "both install a scriptling binary"
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-darwin-arm64.zip"
-			sha256 "a410b914292e253262912638823058d2ce7e0ddd46a2940cb76b76034e43aef6"
+			sha256 "f29fb97014689ba4078f3dc67182286a17ed81fde27f23e391d9db3d88620ebb"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-darwin-amd64.zip"
-			sha256 "a8871a670f410cae6d4239b7c673a177d41cc8776ef194134cc93c4cc056a495"
+			sha256 "31339e791aefd8ea16ed7bb002543affc7c188d4c1de6bde47557158a5348198"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-linux-arm64.zip"
-			sha256 "a07bb5199210f268b1612e39b83b2377fb6afbf533146ac7b7f4cff3d05ce5a8"
+			sha256 "e894657f2933ed2f38ba5e9fef8492827f717ee8c4f05270c688e5f95e6e5dda"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-linux-amd64.zip"
-			sha256 "a127f69a359a0dcde3c5089dbcc8d0227a65cbe2cb4fe4518124e2ddaa667c9b"
+			sha256 "24ff3f41933df5123f40098fb16de610cde6431980b064c12e473f5e4204b6df"
 		end
 	end
 
