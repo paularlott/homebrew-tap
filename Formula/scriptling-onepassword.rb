@@ -2,25 +2,25 @@ class ScriptlingOnepassword < Formula
 	desc "Scriptling with database plugins and 1Password service accounts built in"
 	homepage "https://github.com/paularlott/scriptling"
 	license "MIT"
-	version "0.39.0"
+	version "0.40.1"
 	conflicts_with "scriptling", because: "both install a scriptling binary"
 	conflicts_with "scriptling-slim", because: "both install a scriptling binary"
 	conflicts_with "scriptling-slim-onepassword", because: "both install a scriptling binary"
 	if OS.mac?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-onepassword-darwin-arm64.zip"
-			sha256 "ad54ae415d355f9d402d83f5994da818b4e20650fef5a83b760b9769b3b5d68d"
+			sha256 "0158779bb642e09720103ccdf9ec54a7f9a9b68e0616704e3f3f5a015da5d6f8"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-onepassword-darwin-amd64.zip"
-			sha256 "d3cc3771b123949df1dbaf0017b8cc0bccb42b5ff0e24439ea398c0d05be4d15"
+			sha256 "506084b2c7740c90e8b29c03cd46046e68771e1ed15150c5a3fd08ceb9ed6ed0"
 		end
 	elsif OS.linux?
 		if Hardware::CPU.arm?
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-onepassword-linux-arm64.zip"
-			sha256 "4ecb13c4bd6a75ca13166c2acef1d0c0790d9dc64db1a7b31f58824587a2ec6a"
+			sha256 "697febf940f5a54c28f4cbdd7520af4ce3135b5022d0454a565d62e5be038052"
 		else
 			url "https://github.com/paularlott/scriptling/releases/download/v#{version}/scriptling-onepassword-linux-amd64.zip"
-			sha256 "61657b2053fb67019ad3e5f2d60c66749403207a3030c2bb9f5e866552f0c81e"
+			sha256 "11caf13ba0b953a71d1fb098e9295c13d0ebcc0788520d4ae713ef1cfc467990"
 		end
 	end
 
