@@ -2,27 +2,27 @@ class Llmrouter < Formula
 	desc "A unified gateway that aggregates multiple LLM providers behind a single endpoint"
 	homepage "https://github.com/paularlott/llmrouter"
 	license "MIT"
-	version "0.17.3"
+	version "0.17.4"
 
 	on_macos do
 		on_arm do
 			url "https://github.com/paularlott/llmrouter/releases/download/v#{version}/llmrouter-darwin-arm64.zip"
-			sha256 "e98ded25f77834cc7a8fce3f98d4beb42277c7a20ca3f5c3276127bfd9a390e8"
+			sha256 "bdca471878dfbf274e2e92d6995e59ef2561d6caf71fb9d13f749722062c9158"
 		end
 		on_intel do
 			url "https://github.com/paularlott/llmrouter/releases/download/v#{version}/llmrouter-darwin-amd64.zip"
-			sha256 "4bda8164252bdb5c2209a070e2fe71c0e655bbddd1719d19a41f653b6c1f141b"
+			sha256 "4133d98e66e785b674f367cbd83e5b3a9c1460b1fd490b64df9555bc19901dc5"
 		end
 	end
 
 	on_linux do
 		on_arm do
 			url "https://github.com/paularlott/llmrouter/releases/download/v#{version}/llmrouter-linux-arm64.zip"
-			sha256 "97eb15271fdd4fb7a3de8d9da2bf66bdd7a13c923922014f9eafbcac8fc8255e"
+			sha256 "f4dfa2f68beab3f54c4ce77a83edcd05010088e28ab905cb58e0574bc4475264"
 		end
 		on_intel do
 			url "https://github.com/paularlott/llmrouter/releases/download/v#{version}/llmrouter-linux-amd64.zip"
-			sha256 "c61e77c1aed672fc0e9f818e2e4e5b5b01614973a9474e1c79d395aee824e31d"
+			sha256 "d29d757bf3fd2005c81f1f00c7c4be6f73fba70e5b376a10a44f29dd001edc20"
 		end
 	end
 
